@@ -12,7 +12,7 @@ class JourneyToTheMoon:
 
     def calculate(self):
         # create groups from known pairs
-        groups = []
+        groups = [ set([i]) for i in range(self.n)]
 
         for (u,v) in self.known_pairs:
             u_group = None
@@ -47,8 +47,12 @@ class JourneyToTheMoon:
 
 class TestJourneyToTheMoon(unittest.TestCase):
     def test1(self):
-        jttm = JourneyToTheMoon(4,[(0,1),(2,3)])
-        self.assertEquals(jttm.calculate(),4)
+        jttm1 = JourneyToTheMoon(4,[(0,1),(2,3)])
+        self.assertEquals(jttm1.calculate(),4)
+
+    def test2(self):
+        jttm2 = JourneyToTheMoon(10, [(0, 2), (1, 8), (1, 4), (2, 8), (2, 6), (3, 5), (6, 9)])
+        self.assertEquals(jttm2.calculate(),23)
 
 
 if __name__ == "__main__":
