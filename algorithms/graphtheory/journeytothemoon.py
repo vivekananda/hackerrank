@@ -40,9 +40,10 @@ class JourneyToTheMoon:
         # compute number of ways in which you can make the combinations
         total_combinations = 0
         group_counts = [len(g) for g in groups]
+        sum_of_group_counts = sum(group_counts)
         for i in range(len(group_counts)):
-            for j in range(i + 1, len(group_counts)):
-                total_combinations += group_counts[i] * group_counts[j]
+            sum_of_group_counts -= group_counts[i]
+            total_combinations += group_counts[i] * sum_of_group_counts
         return total_combinations
 
 
@@ -54,7 +55,7 @@ class TestJourneyToTheMoon(unittest.TestCase):
     def test2(self):
         jttm2 = JourneyToTheMoon(10, [(0, 2), (1, 8), (1, 4), (2, 8), (2, 6), (3, 5), (6, 9)])
         self.assertEquals(jttm2.calculate(), 23)
-    
+
     def test3(self):
         jttm3 = JourneyToTheMoon(10, [(0, 2), (2, 8), (2, 6), (1, 8), (1, 4), (3, 5), (8, 6), (6, 9)])
         self.assertEquals(jttm3.calculate(), 23)
