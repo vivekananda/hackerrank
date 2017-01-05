@@ -15,7 +15,7 @@ class Equal:
     def calculate(self):
         minimum = min(self.arr)
         counts = []
-        for i in range(5):
+        for i in range(3):
             if minimum >= i:
                 counts.append(self._calculate_for_min(minimum-i))
         return min(counts)
