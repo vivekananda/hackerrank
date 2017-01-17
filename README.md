@@ -1,4 +1,4 @@
-To Solve all Hacker Rank problems
+Solve as many Hacker Rank problems as possible:
 ==================================
 
-  - Try to solve two problems a week.
+  - Try to solve atleast two problems a week.
