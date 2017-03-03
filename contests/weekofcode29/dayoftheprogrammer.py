@@ -8,7 +8,7 @@ class DayOfTheProgrammer():
 
         diff = 13
         if y == 1918:
-            diff -= 13
+            diff += 13
         elif y < 1918:
             if y % 4 == 0:
                 diff -= 1
@@ -32,7 +32,7 @@ class TestDayOfTheProgrammer(unittest.TestCase):
         dotp = DayOfTheProgrammer()
         self.assertEquals(dotp.compute(2017), "13.09.2017")
         self.assertEquals(dotp.compute(2016), "12.09.2016")
-        self.assertEquals(dotp.compute(1918), "31.08.1918")
+        self.assertEquals(dotp.compute(1918), "26.09.1918")
         self.assertEquals(dotp.compute(1916), "12.09.1916")
 
 
